@@ -2,33 +2,34 @@
 <html>
 <body>
 
-<!-- 1 & 2. Input -->
-<input type="text" id="txt" oninput="showText()">
+<input type="text" id="txt">
 <p id="result"></p>
 
-<!-- 1 & 4. Button -->
-<button onclick="clickButton()">Click</button><br><br>
+<button id="btn">Click</button>
 
-<!-- 3. Form -->
-<form onsubmit="submitForm()">
+<form id="form">
   <input type="text" required>
   <button type="submit">Submit</button>
 </form>
 
 <script>
 
-function clickButton() {
+// 1. Button click
+document.getElementById("btn").addEventListener("click", function() {
   alert("Button clicked");
-}
+});
 
-function showText() {
+// 2. Show input while typing
+document.getElementById("txt").addEventListener("input", function() {
   document.getElementById("result").innerHTML =
   document.getElementById("txt").value;
-}
+});
 
-function submitForm() {
+// 3. Form submit
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
   alert("Form submitted");
-}
+});
 
 </script>
 
